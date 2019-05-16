@@ -10,3 +10,8 @@ git commit -m "asdasd"
 
 git push origin master
 	or git push origin master --force
+
+
+$ git remote -v
+
+$ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
