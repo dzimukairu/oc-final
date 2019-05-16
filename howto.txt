@@ -1,0 +1,12 @@
+git init
+
+git pull
+
+git remote add origin https://github.com/dzimukairu/thesis.git
+
+git add .
+
+git commit -m "asdasd"
+
+git push origin master
+	or git push origin master --force

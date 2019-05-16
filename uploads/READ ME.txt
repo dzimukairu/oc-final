@@ -1,0 +1,5 @@
+CLASSRECORD
+
+teacher_assignment
+	error:
+		date/time deadline

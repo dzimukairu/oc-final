@@ -1,0 +1,315 @@
+✔
+✖
+
+https://help.github.com/articles/changing-a-remote-s-url/
+
+git init
+git remote -v (check repo)
+git pull
+git add .
+git commit -m "comment"
+git push (-f/--force to force)
+
+Legend:
+	--> = another page/link
+	... = working on it
+
+http://www.php.net/manual/en/datetime.format.php
+to save date-time: NOW()
+
+remaining task:
+Teacher:
+   - quiz CRUD
+   - learning materials
+   - adding students
+   - file handling (assignment, quiz)
+
+Student:
+   - Assignment
+   - quiz
+   - file handling
+
+Overall:
+   - navbar
+   - chat
+   - logo, header, footer
+   - name of SP
+   - comment section for Assignment, Quiz
+
+#######################################################################################################
+
+add_s.php
+	Confirming Student
+		-done-
+
+add_stu.php
+	Adding Student
+		-done-
+
+add_student.php
+	Show Students
+		-done-
+
+	Adding Students
+		--> add_stu.php
+
+add_sub.php
+	Adding Subject (but Pending Status, only Teacher can Accept)
+		-done-
+
+add_subject.php
+	Show Subjects
+		-done-
+
+	Adding Subjects
+		--> add_sub.php
+
+all_assignment.php
+	Show Students' Answers
+		-done-
+
+	Grade
+		-done-
+
+announcement.php
+	Preview
+		-done-
+
+	Update
+		-done-
+
+	Delete
+		--> announcement_delete.php
+
+		Prompt
+			-done-
+
+
+	Comments Section
+		Preview
+			-done-
+
+		Teacher can comment
+			-done- but not sure
+
+announcement_delete.php
+	PHP
+		-done-
+
+assignment.php
+	wala pa natapos ang FILE XXX
+
+	Preview
+		-done-
+
+	Preview All Answers
+		--> all_assignment.php
+
+	Update
+		-done-
+
+	Delete
+		--> announcement_delete.php
+
+		Prompt
+			-done-
+
+assignment_delete.php
+	PHP
+		-done-
+
+classrecord.php
+	Student
+		Preview
+			-done-
+		Alphabetically
+			-done-
+
+	Assignment
+		Preview
+			-done-
+		By Date
+			-done-
+		Redirection
+			-done-
+
+	Quiz
+		wala pa
+
+create_subject.php
+	-done-
+
+db_connection.php
+	-done-
+
+del_student.php
+	PHP
+		-done-
+
+index.php
+	Register
+		-done-
+
+	Login
+		Student
+			-done-
+
+		Teacher
+			-done-
+
+oc.sql
+	fixed the database
+
+	question:
+		'teaches' table:
+			student_id gdman indi subject_id?
+
+#######################################################################################################
+
+s_announcement.php
+	Preview
+		-done-
+
+	Can Comment
+		-done-
+
+s_assignment.php
+	Preview
+		-done-
+
+	Can Post Assignment
+		...
+
+	Can Comment
+		...
+
+
+student_course.php
+	About
+		-done-
+
+	Announcement
+		Preview
+			-done-
+
+		Open
+			-->s_announcement.php
+
+	Assignment
+		Preview
+			-done-
+
+		Open
+			-->s_assignment.php
+
+	Quiz
+		...
+
+	Members
+		Preview
+			-done-
+
+
+student_home.php
+	Add subjects
+		--> add_subject.php
+
+	Preview Subjects
+		-done-
+
+	Search Subjects
+		...
+
+
+
+#######################################################################################################
+
+teacher_announcement.php
+	PHP
+		-done-
+
+	print error
+		-done-
+
+teacher_assignment.php
+	wala pa natapos ang FILE XXX
+
+	PHP
+		-done-
+
+	print error
+		-done-
+
+teacher_course.php
+	assignment
+		Create
+			--> teacher_assignment.php
+
+		Preview
+			-done-
+
+		Open
+			--> assignment.php
+
+		Update
+			--> assignment.php
+
+		Delete
+			--> assignment.php
+
+	announcement
+		Create
+			--> teacher_announcement.php
+
+		Preview
+			-done-
+
+		Open
+			--> announcement.php
+
+		Update
+			--> announcement.php
+			
+		Delete
+			--> announcement.php
+
+	quiz
+		Create
+		
+		Preview
+
+		Open
+
+		Update
+
+		Delete
+
+	student
+		Add
+			--> add_student.php
+
+		Confirm Student
+			PHP
+				--> add_s.php
+
+		Preview Alphabetically
+			-done-
+
+		Chat Student
+			...
+
+		Remove Student
+			--> del_student.php
+
+teacher_home.php
+	Create Subjects
+		--> create_subject.php
+
+	Show Subjects
+		-done-
+
+	Search Subjects
+		...
+
+teacher_quiz.php
+	wala pa nacheck
