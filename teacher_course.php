@@ -454,7 +454,7 @@
 
 							<!-- Register / Login -->
 							<div class="login-state d-flex align-items-center">
-								<div class="notificationIcons" style="margin-right: 20px">
+								<!-- <div class="notificationIcons" style="margin-right: 20px">
 									<div id="bellIcon" class="notification">
 										<a data-toggle="dropdown" href="#">
 											<i class="fa fa-bell fa-2x" aria-hidden="true"></i>
@@ -463,7 +463,7 @@
 											<div class="dropdown-menu dropdown-menu-right" id="newTask" style="width: max-content; padding: 10px;">
 											</div>
 									</div>
-								</div>
+								</div> -->
 								<div id="notificationIcons" style="margin-right: 20px">
 									<div id="messageIcon" class="notification">
 										<a data-toggle="dropdown" href="#">
@@ -1022,7 +1022,7 @@
 							</ul>
 						</div>
 
-						<div id="chatDiv">
+						<div id="chatDiv" onload="stillChatting()">
 							<div id="chatHead" style="height: 10%;">
 								<div class="pull-left" style="margin-left: 20px; margin-top: 8px">
 									<b><span id="chatReceiver"></span></b>

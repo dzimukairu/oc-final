@@ -1,5 +1,2 @@
-
-
-4 - In "Name", enter : Registered User
-
-5 - In "Key", enter : CBB4-FJN4-EPC6-G5P6-QT4C
+Name: Registered User
+Key: CBB4-FJN4-EPC6-G5P6-QT4C

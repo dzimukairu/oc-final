@@ -1,14 +1,21 @@
 Good Manager 		- 34
 
-Black Clover		- 202
-One Piece		- 941
-7 Deadly Sins 		- 308
+Black Clover		- 204
+One Piece		- 942
+7 Deadly Sins 		- 309
 Tensura			- 55
 
 
-Dorm		= 900
-Palaba		= 800
-Sablay		= 1500
+GoT		= 5
+B99		= 16
 
-GoT		= 3
-B99		= 11
+10. Seiken No Blacksmith (The Sacred Blacksmith) 
+9. Aoi Sekai No Chuushin De 
+8. K-Project 
+7. Seiken Tsukai No World Break 
+6. Black Cat 
+5. Maoyuu Maou Yuusha 
+4. Blood Las 
+3. Rokka No Yuusha 
+2. Akatsuki No Yona 
+1. Kenja No Mago 

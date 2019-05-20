@@ -358,7 +358,7 @@
 										<?php
 											echo "<h3 class='text-info'>Individual Assignments</h3>";
 											echo "<a href=teacher_assignment.php?subject_id=",urlencode($id)," class='btn clever-btn mb-30' hidden>Add Assignment</a>";
-											echo "<a href='#group_part'",urlencode($id)," class='btn btn-outline-secondary btn-sm'><i class='fa fa-tasks'></i>Go To Group Assignment</a>";
+											echo "<a href='#group_part'",urlencode($id)," class='btn btn-outline-secondary btn-sm'><i class='fa fa-tasks'></i> Go To Group Assignment</a>";
 											echo "<br>";
 
 											$subject_assignment_query= "SELECT * FROM `assignment` WHERE subject_id = $id AND assignment_type='individual' order by date_posted desc";
@@ -404,7 +404,7 @@
 										<?php
 											echo "<br>";
 											echo "<h3 class='text-info'>Group Assignments</h3>";
-											echo "<a href='#individual_part'",urlencode($id)," class='btn btn-outline-secondary btn-sm'><i class='fa fa-tasks'></i>Go To Individual Assignment</a>";
+											echo "<a href='#individual_part'",urlencode($id)," class='btn btn-outline-secondary btn-sm'><i class='fa fa-tasks'></i> Go To Individual Assignment</a>";
 											echo "<br>";
 											
 
@@ -654,7 +654,7 @@
 							</ul>
 						</div>
 
-						<div id="chatDiv">
+						<div id="chatDiv" onload="stillChatting()">
 							<div id="chatHead" style="height: 10%;">
 								<div class="pull-left" style="margin-left: 20px; margin-top: 8px">
 									<b><span id="chatReceiver"></span></b>

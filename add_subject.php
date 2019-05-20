@@ -150,13 +150,13 @@
 							$student_id = $_GET['student_id'];
 							$search = $_GET['search'];
 
-							$check_sub = $dbconn->query("SELECT * from subject where (subject_code = '$search') or (course_title like '%$search%')");
+							$check_sub = $dbconn->query("SELECT * from subject where (subject_code = '$search') or (course_title like '%$search%') or (course_description like '%$search%') ");
 							$result = mysqli_num_rows($check_sub);
 
 							if ($result == 0) {
-								echo "No subjects found.";
+								echo "No subjects found with <b>".$search."</b>.";
 							} else {
-
+								echo "Results for <b>".$search."</b>.<br><br>";
 								$check = $dbconn->query("SELECT * from enrolls where student_id = '$student_id'");
 
 								$all_enrolled_subjects = array();

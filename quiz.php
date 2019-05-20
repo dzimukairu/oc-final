@@ -275,7 +275,7 @@
 						
 						<button class="btn btn-primary" onclick="show_hide_quiz()">Preview Quiz</button>
 						<button class="btn btn-success" onclick="show_hide()">View All Answers</button>
-						<button class="btn btn-danger" onclick="deleteFunction(<?php echo $id;?>)">Delete</button>
+						<!-- <button class="btn btn-danger" onclick="deleteFunction(<?php echo $id;?>)">Delete</button> -->
 
 						<div id="quizDiv" style="margin-top: 30px;">
 							<?php
@@ -512,7 +512,7 @@
 					?>
 					</b>
 					<br>
-					<i>Assigned</i>
+					<i>Remaining</i>
 				</div>
 				<div style="border-right: 2pt dashed;">
 					<b>

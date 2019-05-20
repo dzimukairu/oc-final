@@ -1,0 +1,125 @@
+4.1	4.1			Index Page
+4.2	4.2			Student Home Page
+4.2.1	  4.2.1			Student Home Page - Bell Notification Icon with Notification
+	  4.2.2			Student Home Page - Bell Notification Icon without Notification
+4.2.2	  4.2.3			SHP - Message Notification Icon with Notification
+	  4.2.4			SHP - Message Notification Icon without Notification
+	4.3			Navigation Bar
+4.3	  4.3.1			Student Navigation Bar
+	  4.3.2			Teacher Navigation Bar
+	  4.3.3			Navigation Dropdown
+4.4	4.4		X	Profile Page
+	  4.4.1			PP (part 1)
+	  4.4.2			PP (part 2)
+	  4.4.3			Change Profile Picture
+	  4.4.4			Change Name
+	  4.4.5			Change Password
+4.5	4.5		X	Student Search Page
+	  4.5.1			Before Search (SHP)
+	  4.5.2			After Search (SSP)
+4.6	4.6			Student Add Subject Page
+	  4.6.1			SASP w/ Results
+	  4.6.2			SASP w/o Results
+4.7	4.7			Student Course Page
+	  4.7.1			SCP - Main (p1)
+	  4.7.2			SCP - Main (p2)
+4.8	  4.7.3			SCP - Announcement
+4.9	  		X	SCP - Assignment
+	  4.7.4			Student IAS
+	  4.7.5			Student GAS
+4.10	  4.7.6			SCP - Quiz
+4.11	  4.7.7			SCP - Members
+	  4.7.8			Chat Box
+4.12	4.8		X	Student Class Record Page
+	  4.8.1			SCRP
+	  4.8.2			SCRP (empty)
+4.13	4.9		X	Student Announcement Page
+	  4.9.1			SAP (p1)
+	  4.9.2			SAP (p2)
+4.14	4.10		X	Student Individual Assignment Page
+	  4.10.1		SIAP
+	  4.10.2		Answering Section
+	  4.10.3		Answer was Submitted
+	  4.10.4		Updating Section
+	  4.10.5		Updated Answer
+4.15	4.11		X	Student Group Assignment Page
+	  4.11.1		SGAP (p1)
+	  4.11.2		SGAP (p2)
+	  4.11.3		Group's Answering Section
+	  4.11.4		Group's Answer was Submitted
+	  4.11.5		Group's Updating Section
+	  4.11.6		Group's Updated Answer
+4.16	4.12		X	Student Quiz Page
+	  4.12.1		SQP
+	  4.12.2		Quiz Prompt
+	  4.12.3		Timer and Quiz Area
+	  4.12.4		Forced Submission
+	  4.12.5		Quiz Submitted
+	  4.12.6		Quiz Done
+4.17	4.13			Teacher Home Page
+4.18	4.14			Teacher Create Subject Page
+4.19	4.15			Teacher Course Page
+	  4.15.1		TCP - Main (p1)
+	  4.15.2		TCP - Main (p2)  
+	  4.15.3		Update Course About Modal
+	  4.15.4		Add Learning Materials Modal
+	  4.15.5		Append Files then Plus icon
+	  4.15.6		Append Files Form
+	  4.15.7		Delete then Times icon
+	  4.15.8		Trash icons
+	  4.15.9		Delete Whole Category Prompt
+	  4.15.10		Delete Certain File Prompt
+4.20	  4.15.11		TCP - Announcement
+4.21	  		X	TCP - Assignment
+	  4.15.12		Teacher IAS
+	  4.15.13		Teacher GAS
+4.22	  4.15.14		TCP - Quiz
+4.23	  4.15.15		TCP - Students
+	  4.15.16		Pending List
+	  4.15.17		Accept Pending Student Prompt
+	  4.15.18		Accepting the Pending Student
+	  4.15.19		Chat Box
+	  4.15.20		Remove Student Prompt
+	  4.15.21		Updated Student List
+4.24	4.16		X	Teacher Class Record Page
+	  4.16.1		TCRP
+	  4.16.2		TCRP (empty)
+	  4.16.3		Print Class Record
+4.25	4.17		X	Teacher Announcement Page
+	  4.17.1		TAP
+	  4.17.2		Update Announcement Modal
+4.26	4.18			Teacher Create New Announcement Page
+4.27	4.19		X	Teacher Assignment Page
+	  4.19.1		TAP
+	  4.19.2		Update Assignment Modal
+	  4.19.3		Assignment Counter
+	  4.19.4		Student Pass Assignment On Time
+	  4.19.5		Student Answer Container
+	  4.19.6		Passing Grade
+	  4.19.7		Updating Graded Counter
+4.28	4.20		X	Teacher Create New Assignment Page
+	  4.20.1		TCNAP (p1)
+	  4.20.2		TCNAP (p2)
+4.29	4.21		X	Teacher Quiz Page
+	  4.21.1		TQP
+	  4.21.2		Preview Quiz Section
+	  4.21.3		Quiz Counter
+	  4.21.4		Automatically Checks
+	  4.21.5		Essay
+	  4.21.6		Student's Answer for Essay
+	  4.21.7		Teacher Inputs Grades
+	  4.21.8		Updating Graded Counter
+4.30	4.22			Teacher Create New Quiz Page
+	  4.22.1		TCNQP (p1)
+	  4.22.2		TCNQP (p2)
+	  4.22.3		Time Limit
+	  4.22.4		Quiz Types (p1)
+	  4.22.5		Quiz Types (p2)
+	  4.22.6		Add Row
+	  4.22.7		Delete Row (p1)
+	  4.22.8		Delete Row (p2)
+4.31	4.23		X	Teacher Add Student Page
+	  4.23.1		TASP
+	  4.23.2		No Results
+	  4.23.3		With Results
+	  4.23.4		Confirming Student Prompt

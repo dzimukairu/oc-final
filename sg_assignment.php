@@ -115,24 +115,23 @@
 
 		if (isset($_POST['pass_assignment'])) {
 			$answer_content = $_POST['answer_content'];
-			$fileToUpload = $_POST['fileToUpload'];
+			// $fileToUpload = $_POST['fileToUpload'];
 
 
 			//echo "<script>alert('$answer_content')</script>";
 
 			if($_FILES['fileToUpload']['size'] == 0) {
+				echo "no file";
 				$insert_query ="INSERT into answer_group_assignment(content, student_id, assignment_id, group_number) VALUES('$answer_content', '$s_id', '$id', '$group_num')";
 				$insert_query_connect = mysqli_query($dbconn, $insert_query);
 
 				
 				if ($insert_query_connect) {
-					header("Location: sg_assignment.php?s_id=".$s_id."&assignment_id=".$id);
+					header("Location: sg_assignment.php?assignment_id=".$id);
 					//echo "<script>alert('ok')</script>";
 				}
-			} 
-
-			else {
-				
+			} else {
+				// echo "has file";
 				
 				$target_dir = "uploads/";
 				$fileName = basename($_FILES["fileToUpload"]["name"]);
@@ -142,14 +141,14 @@
 				if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_files)) {
 					$insert_file_query = $dbconn->query("INSERT into uploaded_files(filename, date_posted) values ('".$fileName."', NOW())");
 				}
-
+				echo 1;
 				if ($insert_file_query) {
 					$file_id = $dbconn->insert_id;
-
+					// echo $file_id;
 					$query = $dbconn->query("INSERT into answer_group_assignment(content, date_posted, student_id, assignment_id, file_id, group_number) VALUES('$answer_content', NOW(), '$s_id', '$id', '$file_id', '$group_num')");
 				
 					if ($query) {
-						header("Location: sg_assignment.php?s_id=".$s_id."&assignment_id=".$id);
+						header("Location: sg_assignment.php?assignment_id=".$id);
 					}
 				}
 			}
@@ -180,7 +179,7 @@
 	if (isset($_POST['update_assignment'])) {
 		$new_answer_content = $_POST['new_answer_content'];
 		$a_id = $_POST['a_id'];
-		$fileToUpdate = $_POST['fileToUpdate'];
+		// $fileToUpdate = $_POST['fileToUpdate'];
 		//echo "<script>alert('$id')</script>";
 
 		if($_FILES['fileToUpdate']['size'] == 0) {
@@ -188,7 +187,7 @@
 			$update_query_connect = mysqli_query($dbconn, $update_query);
 			
 			if ($update_query_connect) {
-				header("Location: sg_assignment.php?s_id=".$s_id."&assignment_id=".$id);
+				header("Location: sg_assignment.php?assignment_id=".$id);
 				//echo "<script>alert('ok')</script>";
 			}
 		} 
@@ -204,17 +203,12 @@
 			}
 
 			if ($insert_file_query) {
-				//$file_id = $dbconn->insert_id;
-				$max_id = "SELECT MAX(file_id) FROM uploaded_files";
-				$max_id_connect = mysqli_query($dbconn, $max_id);
-				while ($max_selected = mysqli_fetch_array($max_id_connect)) {
-					$max_id_selected = $max_selected['file_id'];
-				}
+				$file_id = $dbconn->insert_id;
 
-				$query = $dbconn->query("UPDATE answer_group_assignment set content = '$new_answer_content', date_posted = NOW() , file_id = '$max_id_selected' where assignment_id = '$id' AND student_id = '$s_id'");
+				$query = $dbconn->query("UPDATE answer_group_assignment set content = '$new_answer_content', date_posted = NOW() where assignment_id = '$id' AND student_id = '$s_id'");
 			
 				if ($query) {
-					header("Location: sg_assignment.php?s_id=".$s_id."&assignment_id=".$id);
+					header("Location: sg_assignment.php?assignment_id=".$id);
 				}
 			}
 		}
@@ -408,7 +402,7 @@
 							while ($getMembers_row = mysqli_fetch_array($getMembers_connect)) {
 								$mymembers[] = $getMembers_row['student_id'];
 							}
-
+							echo "<div style='margin-left: 40px'>";
 							foreach ($mymembers as $membersID) {
 								$getNames = "SELECT * from student WHERE student_id = '$membersID'";
 								$getNames_connect = mysqli_query($dbconn, $getNames);
@@ -418,6 +412,7 @@
 									echo $mem_firstName." ".$mem_lastName."<br>";
 								}
 							}
+							echo "</div>";
 							echo "<br>";
 							if (!$haveAnswer) {
 								echo "<button id='answer_btn' class='btn btn-primary clever-btn pull-right' onclick='show_hide()'>Answer</button>";
@@ -471,7 +466,7 @@
 			<div class="row" style="margin-top:20px" id="answerDiv" name="answerDiv">
 				<div class="col-12 col-lg-12 border rounded" style="padding-top: 20px; padding-bottom: 70px">
 					<div style="padding-left: 80px; padding-right: 80px;">
-						<h6>Your Answer:</h6>
+						<h6>Your Group's Answer:</h6>
 
 						<div>
 							<form method="POST" enctype="multipart/form-data">

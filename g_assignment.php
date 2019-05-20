@@ -61,12 +61,28 @@
 		$new_ddate = $_POST['new_ddate'];
 		$new_dtime = $_POST['new_dtime'];
 
-		$update_query = "UPDATE assignment SET title = '$new_title', instruction = '$new_instruction', deadline_date = '$new_ddate', deadline_time = '$new_dtime' WHERE assignment_id = '$id'";
-		// $update_query = "UPDATE assignment SET instruction = '$new_instruction' WHERE assignment_id = '$id'";
+		$update_query = $dbconn->query("UPDATE assignment SET title = '$new_title', instruction = '$new_instruction', deadline_date = '$new_ddate', deadline_time = '$new_dtime' WHERE assignment_id = '$id'");
 
-		if ($update_connect = mysqli_query($dbconn, $update_query)) {
-			header("Location: g_assignment.php?assignment_id=".$id);
+		if($_FILES['sent_file']['size'] != 0) {
+			$target_dir = "uploads/";
+			$ufileName = basename($_FILES["sent_file"]["name"]);
+			$target_files = $target_dir . $ufileName;
+			$fileType = pathinfo($target_files,PATHINFO_EXTENSION);
+
+			if (move_uploaded_file($_FILES["sent_file"]["tmp_name"], $target_files)) {
+				if ($isFileEmpty) {
+					$insert_file_query = $dbconn->query("INSERT into uploaded_files(filename, date_posted) values ('".$ufileName."', NOW())");
+
+					$file_id = $dbconn->insert_id;
+
+					$Xquery = $dbconn->query("UPDATE assignment set file_id = '$file_id' where assignment_id = '$id'");
+				} else {
+					$insert_file_query = $dbconn->query("UPDATE uploaded_files set filename = '$ufileName' where file_id = '$file_id' ");
+				}
+			}
 		}
+		
+		header("Location: assignment.php?assignment_id=".$id);
 	}
 
 	if(isset($_POST['pass_grade'])) {
@@ -255,6 +271,7 @@
 						<h6><?php echo $assignment_instruction;?></h6>
 						<h6>Total Points: <?php echo $score ?></h6>
 						<br>
+						<h6>Type: Group Assignment</h6>
 						<h6>File:
 							<?php
 								if ($isFileEmpty == false) {
@@ -280,7 +297,7 @@
 											
 						<button class="btn btn-success" onclick="show_hide()">View All Submissions</button>
 						<button class="btn btn-info" data-toggle="modal" data-target="#update-assignment-modal">Update</button>
-						<button class="btn btn-danger" onclick="deleteFunction(<?php echo $id;?>)">Delete</button>
+						<!-- <button class="btn btn-danger" onclick="deleteFunction(<?php echo $id;?>)">Delete</button> -->
 
 						<script>
 							function deleteFunction(id) {
@@ -427,7 +444,7 @@
 		<div class="modal-dialog" style="max-width: 80% !important;">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title pull-left">Update assignment</h4>
+					<h4 class="modal-title pull-left">Update Assignment</h4>
 				</div>
 				<div class="modal-body">
 					<form method="POST" action="assignment.php?assignment_id=<?php echo $id?>" enctype="multipart/form-data">

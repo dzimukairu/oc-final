@@ -97,7 +97,7 @@
 			$query = $dbconn->query("INSERT into answer_assignment(content, date_posted, student_id, assignment_id, grade) VALUES('$answer_content', NOW(), '$s_id', '$id', -1)");
 			
 			if ($query) {
-				header("Location: s_assignment.php?s_id=".$s_id."&assignment_id=".$id);
+				header("Location: s_assignment.php?assignment_id=".$id);
 			}
 		} else {
 			$target_dir = "uploads/";
@@ -115,7 +115,7 @@
 				$query = $dbconn->query("INSERT into answer_assignment(content, date_posted, student_id, assignment_id, file_id) VALUES('$answer_content', NOW(), '$s_id', '$id', '$file_id')");
 			
 				if ($query) {
-					header("Location: s_assignment.php?s_id=".$s_id."&assignment_id=".$id);
+					header("Location: s_assignment.php?assignment_id=".$id);
 				}
 			}
 		}
@@ -131,7 +131,7 @@
 			$query = $dbconn->query("UPDATE answer_assignment set content = '$new_answer_content', date_posted = NOW() where id = '$a_id' ");
 			
 			if ($query) {
-				header("Location: s_assignment.php?s_id=".$s_id."&assignment_id=".$id);
+				header("Location: s_assignment.php?assignment_id=".$id);
 			}
 		} else {
 			$target_dir = "uploads/";
@@ -140,18 +140,18 @@
 			$fileType = pathinfo($target_files,PATHINFO_EXTENSION);
 
 			if (move_uploaded_file($_FILES["fileToUpdate"]["tmp_name"], $target_files)) {
-				$insert_file_query = $dbconn->query("UPDATE uploaded_files set filename = '$ufileName' where file_id = '$a_file_id' ");
-			}
+				if ($isFileEmpty == false) {
+					$insert_file_query = $dbconn->query("INSERT into uploaded_files(filename, date_posted) values ('".$ufileName."', NOW())");
 
-			if ($insert_file_query) {
-				$file_id = $dbconn->insert_id;
+					$file_id = $dbconn->insert_id;
 
-				$query = $dbconn->query("UPDATE answer_assignment set content = '$new_answer_content', date_posted = NOW() where id = '$a_id'");
-			
-				if ($query) {
-					header("Location: s_assignment.php?s_id=".$s_id."&assignment_id=".$id);
+					$Xquery = $dbconn->query("UPDATE answer_assignment set content = '$new_answer_content', date_posted = NOW(), file_id = '$file_id' where id = '$a_id'");
+				} else {
+					$insert_file_query = $dbconn->query("UPDATE uploaded_files set filename = '$ufileName' where file_id = '$a_file_id' ");
 				}
 			}
+
+			header("Location: s_assignment.php?assignment_id=".$id);
 		}
 	}
 ?>
@@ -333,7 +333,17 @@
 							?>
 						</p>
 
-						<button class='btn btn-primary clever-btn pull-right' onclick='show_hide()'>Answer</button>
+						<?php
+							if (!$haveAnswer) {
+						?>
+								<button class='btn btn-primary clever-btn pull-right' onclick='show_hide()'>Answer</button>
+						<?php
+							} else {
+						?>
+								<button class='btn btn-primary clever-btn pull-right' style="display: none;" onclick='show_hide()'>Answer</button>
+						<?php
+							}
+						?>
 					</div>
 				</div>
 

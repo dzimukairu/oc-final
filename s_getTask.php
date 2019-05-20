@@ -20,7 +20,7 @@
 	$getAnnouncement_connect = mysqli_query($dbconn, $getAnnouncement);
 	$announcement_count = mysqli_num_rows($getAnnouncement_connect);
 
-	$getGroupAssignment = "SELECT subject_id, count(*) from group_assignment where student_id = '$studentId' and opened = 'false' group by subject_id ";
+	$getGroupAssignment = "SELECT subject_id, count(*) from group_assignment where student_id = '$studentId' and opened = 'false' and assignment_id <> 0 group by subject_id ";
 	$getGroupAssignment_connect = mysqli_query($dbconn, $getGroupAssignment);
 	$group_count = mysqli_num_rows($getGroupAssignment_connect);
 
